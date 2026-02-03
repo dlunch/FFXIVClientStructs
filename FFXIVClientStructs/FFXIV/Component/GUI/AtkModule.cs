@@ -38,25 +38,25 @@ public unsafe partial struct AtkModule {
     [FieldOffset(0x72B8)] public StdMap<uint, AddonCallbackEntry> AddonCallbackMapping; // Key is UnitBase->Id
     [FieldOffset(0x72C8)] public AtkMessageBoxManager* AtkMessageBoxManager;
     [FieldOffset(0x72D0)] public TextService TextService;
-    [FieldOffset(0x7300)] public AtkTextInput TextInput;
-    [FieldOffset(0x7FF0)] internal Utf8String Unk7FE8;
-    [FieldOffset(0x8058)] internal Utf8String Unk8050;
-    [FieldOffset(0x80C0)] internal Utf8String Unk80B8;
-    [FieldOffset(0x8128)] internal Utf8String Unk8120;
+    [FieldOffset(0x7300 - 0x10)] public AtkTextInput TextInput;
+    [FieldOffset(0x7FF0 - 0x10)] internal Utf8String Unk7FE8;
+    [FieldOffset(0x8058 - 0x10)] internal Utf8String Unk8050;
+    [FieldOffset(0x80C0 - 0x10)] internal Utf8String Unk80B8;
+    [FieldOffset(0x8128 - 0x10)] internal Utf8String Unk8120;
 
     // probably an #IFDEF WINDOWS here or something specifically creating a Steam keyboard.
     // hope they don't add more soft keyboards later!
-    [FieldOffset(0x8198)] public SteamGamepadSoftKeyboard SoftKeyboardDevice;
+    [FieldOffset(0x8198 - 0x10)] public SteamGamepadSoftKeyboard SoftKeyboardDevice;
 
-    [FieldOffset(0x82B0), FixedSizeArray(isString: true)] internal FixedSizeArray16<byte> _currentUIScene;
-    [FieldOffset(0x82C0), FixedSizeArray(isString: true)] internal FixedSizeArray16<byte> _loadingUIScene;
+    [FieldOffset(0x82B0 - 0x10), FixedSizeArray(isString: true)] internal FixedSizeArray16<byte> _currentUIScene;
+    [FieldOffset(0x82C0 - 0x10), FixedSizeArray(isString: true)] internal FixedSizeArray16<byte> _loadingUIScene;
 
-    [FieldOffset(0x82D8)] internal ushort ScreenWidth; // maybe UI dimensions?
-    [FieldOffset(0x82DA)] internal ushort ScreenHeight;
-    [FieldOffset(0x82DC)] public bool EnableUiDraw;
+    [FieldOffset(0x82D8 - 0x10)] internal ushort ScreenWidth; // maybe UI dimensions?
+    [FieldOffset(0x82DA - 0x10)] internal ushort ScreenHeight;
+    [FieldOffset(0x82DC - 0x10)] public bool EnableUiDraw;
 
-    [FieldOffset(0x82E0)] public bool EnableUiInput;
-    [FieldOffset(0x82E1)] public bool IsHudInitialized;
+    [FieldOffset(0x82E0 - 0x10)] public bool EnableUiInput;
+    [FieldOffset(0x82E1 - 0x10)] public bool IsHudInitialized;
 
     [VirtualFunction(44)]
     public partial AddonStatus GetAddonStatus(uint addonId);
